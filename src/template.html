@@ -6,6 +6,66 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header><span><img src="./assets/list-solid-full.svg" alt=""></span><span>Jomiloju's List</span></header>
+    <main>
+        <div class="fixed-cont">
+            <div>
+                <div>
+                    <div>
+                        <img src="./assets/list-solid-full.svg" alt="list icon">
+                        <p>All Tasks</p>
+                    </div>
+                    <span>1</span>
+                </div>
+                <div>
+                    <div>
+                        <img src="./assets/list-solid-full.svg" alt="list icon">
+                        <p>Today</p>
+                    </div>
+                    
+                    <span></span>
+                </div>
+                <div>
+                    <div>
+                        <img src="./assets/list-solid-full.svg" alt="list icon">
+                        <p>This Week</p>
+                    </div>
+                    
+                    <span></span>
+                </div>
+                <div>
+                    <div>
+                        <img src="./assets/list-solid-full.svg" alt="list icon">
+                        <p>Completed</p>
+                    </div>
+                    
+                    <span></span>
+                </div>
+            </div>
+            <hr>
+            <p>Projects</p>
+            <!-- Dynamically create using javascript -->
+            <div class="prjct-cont">
+            </div>
+            <div>
+                <button id="show-project-modal"><span>+</span> Add Project</button>
+            </div>
+        </div>
+        <article id="tasks-cont"></article>
+    </main>
+    <dialog closedby="any" id="project-dialog">
+        <form action="">
+            <button class="close-dialog">&#x274C</button>
+            <p>
+                <label for="">
+                    Add Project
+                    <input type="text" placeholder="Project name" id="prjct-title">
+                </label>
+            </p>
+            <p>
+                <button id="prjct-submit">Add Project</button>
+            </p>
+        </form>
+    </dialog>
 </body>
 </html>
