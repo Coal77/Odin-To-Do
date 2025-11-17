@@ -52,6 +52,7 @@ function addProjectCard() {
             let childNode = newPrjctCard;
             let parentNode = childNode.parentNode;
             parentNode.removeChild(childNode);
+            projectLibrary.splice(i, 1);
         });
         prjctCont.appendChild(newPrjctCard)
     }
