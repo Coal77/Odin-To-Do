@@ -6,12 +6,12 @@ const closeModals = document.querySelectorAll('.close-dialog');
 const prjctTitle = document.getElementById('prjct-title');
 const prjctSubmit = document.getElementById('prjct-submit');
 const prjctCont = document.querySelector('.prjct-cont');
-const cardDel = document.querySelector('.cardDel');
 
 //? Function to show the project modal
 showProjectModal.addEventListener('click', () => {
     projectDialog.showModal();
 });
+
 //? Function to close modals
 closeModals.forEach((btn) => {
     btn.addEventListener('click', function(e) {
@@ -22,24 +22,30 @@ closeModals.forEach((btn) => {
 });
 
 const projectLibrary = [];
-//? function to create project cards
+
+//? Constructor to create project cards
 function ProjectCards(title) {
+    // const randId = crypto.randomUUID();
     this.title = title;
+    // this.randId = id;
 }
 
 prjctSubmit.addEventListener('click', function(e) {
-    e.preventDefault();
-    projectDialog.close();
-    const projectCard = new ProjectCards(prjctTitle.value);
-    projectLibrary.push(projectCard);
-    prjctTitle.value = '';
-    addProjectCard();
+    if(prjctTitle.value) {
+        e.preventDefault();
+        projectDialog.close();
+        const projectCard = new ProjectCards(prjctTitle.value);
+        projectLibrary.push(projectCard);
+        prjctTitle.value = '';
+        addProjectCard();
+    }
 })
 
 function addProjectCard() {
     prjctCont.innerHTML = '';
     for(let i = 0; i < projectLibrary.length; i++) {
         let newPrjctCard = document.createElement('div');
+        newPrjctCard.setAttribute('id', `${projectLibrary[i].id}`)
         newPrjctCard.innerHTML = `
             <p>${projectLibrary[i].title}</p>
             <div class='cardDel'>&#x00D7</div>
@@ -54,10 +60,10 @@ function addProjectCard() {
             parentNode.removeChild(childNode);
             projectLibrary.splice(i, 1);
         });
-        prjctCont.appendChild(newPrjctCard)
-    }
-}
+        prjctCont.appendChild(newPrjctCard);
+    };
+};
 
 
 
-export { showProjectModal, closeModals, prjctSubmit };
+// export { showProjectModal, closeModals, prjctSubmit };
