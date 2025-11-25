@@ -1,4 +1,9 @@
 import './style.css';
-import { showProjectModal, closeModals, prjctSubmit } from './projectModal';
+import { projectHandler } from './projectModal';
+import { taskHandler } from './tasks'; 
 
+const tasksCont = document.getElementById('tasks-cont');
 
+function renderPage() {
+    
+}

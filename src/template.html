@@ -45,10 +45,9 @@
             <hr>
             <p>Projects</p>
             <!-- Dynamically create using javascript -->
-            <div class="prjct-cont">
-            </div>
+            <div class="prjct-cont"></div>
             <div>
-                <button id="show-project-modal"><span>+</span> Add Project</button>
+                <button id="show-project-modal"><span>&plus;</span> Add Project</button>
             </div>
         </div>
         <article id="tasks-cont"></article>
@@ -59,13 +58,39 @@
             <p>
                 <label for="">
                     Add Project
-                    <input type="text" placeholder="Project name" id="prjct-title">
                 </label>
+            </p>
+            <p>
+                <input type="text" placeholder="Project name" id="prjct-title" autofocus required>
             </p>
             <p>
                 <button id="prjct-submit">Add Project</button>
             </p>
         </form>
     </dialog>
+    <dialog closedby="any" id="task-dialog">
+        <form action="">
+            <button class="close-dialog">&#x274C</button>
+            <p>Add Task</p>
+            <div><input type="text" placeholder="Task name" id="task-title"></div>
+            <div><textarea name="" id="task-description" placeholder="Description"></textarea></div>
+            <div>
+                <label for="due-date">Due Date</label>
+                <input type="date" id="task-due-date">
+            </div>
+            <div>
+                <label for="priority">Priority</label>
+                <select name="priority" id="task-priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <div>
+                <button id="task-submit">Add Task</button>
+            </div>
+        </form>
+    </dialog>
+    <div id="add-task-btn">&plus;</div>
 </body>
 </html>
